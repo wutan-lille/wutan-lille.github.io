@@ -11,7 +11,7 @@
       nav: { about: "À propos", team: "Équipe", social: "Réseaux", fed: "Fédération" },
       hero: { title: "Wutan Lille", subtitle: "Bajiquan • Pigua Zhang • Baguazhang", cta: "Nous contacter" },
       header: { news: "Actualités" },
-      about: { title: "Notre École", desc: "Wutan Lille enseigne les arts internes et externes traditionnels : Bajiquan, Pigua Zhang et Baguazhang. Un chemin de дисциплина, d’équilibre et d’énergie." },
+      about: { title: "Notre École", desc: "Wutan Lille enseigne les arts internes et externes traditionnels : Bajiquan, Pigua Zhang et Baguazhang. Un chemin de discipline, d’équilibre et d’énergie." },
       styles: {
         bajiquan: { title: "Bajiquan ( 八极拳 )", text: "Explosif, direct et efficace, le Bajiquan met l’accent sur le fa jin (explosion d’énergie) et les courtes et moyennes distances." },
         piguazhang: { title: "Pigua Zhang ( 劈挂掌 )", text: "Longues amplitudes, torsions et puissance des bras « hache » et « voile ». Complément idéal du Bajiquan." },
