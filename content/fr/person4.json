@@ -1,0 +1,33 @@
+{
+'html': '<article>
+        <div class="inCon">
+        <h1>Président Actuel - Zhang Guanghong</h1><span class="path"><a href="index.php">Accueil</a> > <b>Président Actuel Zhang Guanghong</b></span>
+        <div id="subLink"><a href="#AA">Lignée Martiale</a>｜<a href="#BB">Expérience Martiale</a></div>
+        <h2>Formation Académique</h2><a name="AA" id="AA"></a>
+        <p><img src="https://wutang.tw/images/Chairman-photo-02.jpg" class="photoR">
+        Éducation: Diplômé du Master en Administration des Affaires (EMBA), Faculté de Management de l'Université Nationale Cheng Kung</p>
+        <h2>Lignée Martiale</h2></a><a name="BB" id="BB"></a>
+        <p>Liu Yunqiao: Baji Quan, Pigua Zhang, Bagua Zhang.<br>
+            Wei Xiaotang: Poing Mante Religieuse Huit Pas<br>
+            Xu Ji: Poing Long, Bagua Zhang, Baji Quan, Pigua Zhang.<br>
+            Xi Jiajun: Bagua Zhang.
+        </p>
+        <br><br><br>
+        <h2>Expérience Martiale</h2><a name="DD" id="DD"></a>
+        <p>
+            <ul>
+                <li>Vice-Président, Association de Promotion des Arts Martiaux Chinois Wutan</li>
+                <li>Arbitre National Niveau A, Association des Arts Martiaux Chinois de la République de Chine</li>
+                <li>Entraîneur National d'Arts Martiaux Sportifs, Fédération Sportive de la République de Chine</li>
+                <li>Membre du Comité, Comité des Entraîneurs, Association des Arts Martiaux de la Ville de Taipei</li>
+                <li>Entraîneur, Centre de Promotion des Arts Martiaux Wutan</li>
+                <li>Entraîneur, Classe Préparatoire d'Entraîneurs du Comité Baji Quan, Association des Arts Martiaux Chinois de la République de Chine</li>
+                <li>Instructeur du Club d'Arts Martiaux, Institut de Technologie de Chine, Université Shih Hsin</li>
+                <li>Professeur Professionnel d'Arts Martiaux, Bureau d'Éducation Physique, Université Shih Hsin</li>
+                <li>Professeur d'Arts Martiaux, Camp d'Été de Retour au Pays d'Origine pour Jeunes d'Outre-Mer, Corps de la Jeunesse</li>
+            </ul>
+        </p>
+        </div>
+        <div class="clear"></div>
+        </article>
+'}

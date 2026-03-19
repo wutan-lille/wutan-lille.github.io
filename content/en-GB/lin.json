@@ -1,0 +1,29 @@
+{'html' : '<article>
+        <div class="inCon">
+        <h1>Current President - Lin Zhongxi</h1><span class="path"><a href="index.php">Home</a> > <b>Current President Lin Zhongxi</b></span>
+        <div id="subLink"><a href="#AA">Martial Arts Lineage</a>｜<a href="#BB">Current Positions</a>｜<a href="#CC">Martial Arts Experience</a>｜<a href="#DD">National Martial Arts Championship Positions</a>｜<a href="#EE">Philosophy</a></div>
+        <h2>Academic Background</h2><a name="AA" id="AA"></a>
+        <p><img src="https://wutang.tw/images/Chairman-photo-01.jpg" class="photoR">
+        Born: 1957, Taipei County, Taiwan Province<br>Education: Master of Business Administration (EMBA), National Cheng Kung University College of Management</p>
+        <h2>Martial Arts Lineage</h2></a><a name="BB" id="BB"></a>
+        <p>Liu Yunqiao: Baji Quan, Pigua Zhang, Bagua Zhang, Baji Sword, Double Axes, Great Spear Technique.<br>Xu Ji: Long Fist, Taijiquan, Bagua Zhang, Baji Quan, Pigua Zhang.<br>Su Yuzhang: Arhat Gong, Praying Mantis Fist, Sanda, Weapons.<br>Zhang Dunxi: Yijin Jing, Tongbei Quan, Taijiquan.</p>
+        <h2>Current Positions</h2><a name="CC" id="CC"></a>
+        <p>
+            <ul>
+                <li>Chairman, Chinese Wutan Martial Arts Promotion Association</li>
+                <li>Secretary-General, Comprehensive Defence Applied Martial Arts Society</li>
+                <li>National (A) Level Coach, National (A) Level Referee, Chinese Martial Arts Federation</li>
+                <li>Honorary Principal, Yue Fei Martial Arts School, Wuxue City, Hubei Province</li>
+                <li>Honorary Director, Baji Quan Museum, Qingyun County, Shandong Province</li>
+            </ul>
+        </p>
+        
+        <h2>Martial Arts Experience</h2><a name="DD" id="DD"></a>
+        <p><ul><li>Baji Quan Instructor, Chinese Martial Arts Federation (A) Level Coach and Referee Training Seminar</li><li>Full-time Instructor, Chinese Martial Arts Federation National Loyalty and Righteousness Fist Coach Training Seminar</li><li>Instructor, Comprehensive Arrest Techniques, Taiwan Police College</li><li>Baji Quan Instructor, Chinese Culture University Department of Sports Combat and Martial Arts</li><li>Oral Examination Committee Member, Graduate Master's Thesis, National Taiwan Sport University</li><li>Baji Quan Instructor, Taipei City Primary and Secondary School Teachers Martial Arts Seminar</li><li>Examination Committee Member, Fu Jen Catholic University and Chinese Culture University Joint Admissions Practical Skills Assessment</li><li>Judge, 1999 International Wushu-Kungfu Championships</li><li>2000 All-American National Martial Arts Competition Baji Quan Champion, Pigua Zhang Champion</li><li>Martial Arts Director, 2015 CTS Golden Bell Awards Nominated Drama "Baji Youth"</li><li>Baji Quan Special Interview, China Central Television (CCTV4)</li><li>Martial Arts Club Instructor, Taiwan Normal University, Changhua Normal University, National Taiwan Sport University, Tatung University, Tamkang University, United University</li></ul></p>
+        <h2>National Martial Arts Championship Positions</h2><a name="EE" id="EE"></a>
+        <p><ul><li>Chief Referee, National Games Wushu Sanda</li><li>Chief Referee, National Sports Festival Traditional Martial Arts, Weapon Combat, Empty-Hand Ring</li><li>Chief Referee, Chinese Martial Arts International Alliance World Cup Martial Arts Championships</li><li>Chief Referee, National Chung Cheng Cup Traditional Martial Arts, Empty-Hand Ring</li><li>Chief Referee, National Elite Cup Martial Arts Championships</li><li>Chief Referee, Taipei City Youth Cup Martial Arts Championships</li><li>Chief Referee, 2nd, 3rd, 4th Chinese North Shaolin Traditional Martial Arts Association Cup Championships</li><li>Chief Referee, 2008 Chinese Martial Arts Cup National Traditional Martial Arts Championships</li><li>Chief Referee, 2013 Chengchi University Cup International Taiji Martial Arts Masters Invitational Tournament</li><li>Chief Referee, 2017 Taoyuan City Mayor's Cup Wushu Taijiquan Championships</li></ul></p>
+        <h2>Philosophy</h2></a><p>Dedicated to combining traditional martial arts training with modern sports concepts</p>
+        </div>
+        <div class="clear"></div>
+        </article>
+'}

@@ -1,0 +1,29 @@
+{ 'html':'<article>
+        <div class="inCon">
+        <h1>Fédération Mondiale Wu Tan Kuoshu (WWKF)</h1><span class="path"><a href="index.php">Accueil</a> > <b>Fédération Mondiale Wu Tan Kuoshu</b></span>
+     
+        <h2>Origine</h2><a name="organization-overview" id="organization-overview"></a>
+        <p>Cette fédération est une plateforme internationale formée par les disciples du Grand Maître Liu Yunqiao—sans présidents ni hiérarchie, unis par les arts martiaux et des principes partagés.<br>Les styles Baji, Bagua et Mante Religieuse du Grand Maître Liu mettent l'accent à la fois sur la compétence et la vertu—la voie est incarnée dans le poing, transmise à travers les générations.</p>
+        <h3>Mission</h3>
+        <ol>
+            <li>Préserver la lignée authentique</li>
+            <li>Unifier compétence et vertu</li>
+            <li>Communauté mondiale de disciples</li>
+        </ol>
+        <p></p>
+        <p>Une plateforme mondiale à but non lucratif formée par les disciples du Grand Maître Liu Yunqiao—sans titres ni grades, unis par l'esprit martial et une voie partagée. <br>Le Bajiquan, Baguazhang et Tanglangquan du Grand Maître Liu mettent l'accent à la fois sur la compétence et la vertu—ses enseignements vivent à travers l'action et le cœur.</p>        
+        <h3>Mission</h3>
+        <ol>
+            <li>Préserver la lignée authentique</li>
+            <li>Cultiver compétence et vertu</li>
+            <li>Unir les disciples dans le monde entier</li>
+        </ol>
+        <p></p>
+       
+        <h2>Logo</h2><a name="wwkf-logo" id="wwkf-logo"></a>
+        <p style="text-align: center;"><img src="https://wutang.tw/images/WWKF-LOGO.png" class="wwkf-logo"></p>
+       
+        </div>
+        <div class="clear"></div>
+    </article>
+'}

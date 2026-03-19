@@ -1,0 +1,33 @@
+{
+'html': '<article>
+        <div class="inCon">
+        <h1>Current President - Zhang Guanghong</h1><span class="path"><a href="index.php">Home</a> > <b>Current President Zhang Guanghong</b></span>
+        <div id="subLink"><a href="#AA">Martial Arts Lineage</a>｜<a href="#BB">Martial Arts Experience</a></div>
+        <h2>Academic Background</h2><a name="AA" id="AA"></a>
+        <p><img src="https://wutang.tw/images/Chairman-photo-02.jpg" class="photoR">
+        Education: Master of Business Administration (EMBA) Graduate, National Cheng Kung University College of Management</p>
+        <h2>Martial Arts Lineage</h2></a><a name="BB" id="BB"></a>
+        <p>Liu Yunqiao: Baji Quan, Pigua Zhang, Bagua Zhang.<br>
+            Wei Xiaotang: Eight Step Praying Mantis Fist<br>
+            Xu Ji: Long Fist, Bagua Zhang, Baji Quan, Pigua Zhang.<br>
+            Xi Jiajun: Bagua Zhang.
+        </p>
+        <br><br><br>
+        <h2>Martial Arts Experience</h2><a name="DD" id="DD"></a>
+        <p>
+            <ul>
+                <li>Vice Chairman, Chinese Wutan Martial Arts Promotion Association</li>
+                <li>National Level A Referee, Chinese Martial Arts Association of the Republic of China</li>
+                <li>National Level Martial Arts Sports Coach, Republic of China Sports Federation</li>
+                <li>Committee Member, Coach Committee, Taipei City Martial Arts Association</li>
+                <li>Coach, Wutan Martial Arts Promotion Centre</li>
+                <li>Coach, Baji Quan Committee Preparatory Coach Class, Chinese Martial Arts Association of the Republic of China</li>
+                <li>Martial Arts Club Instructor, China Institute of Technology, Shih Hsin University</li>
+                <li>Professional Martial Arts Teacher, Physical Education Office, Shih Hsin University</li>
+                <li>Martial Arts Teacher, Overseas Youth Summer Return to Homeland Study Camp, Youth Corps</li>
+            </ul>
+        </p>
+        </div>
+        <div class="clear"></div>
+        </article>
+'}

@@ -1,0 +1,33 @@
+{
+'html': '<article>
+        <div class="inCon">
+        <h1>Presidente Attuale - Zhang Guanghong</h1><span class="path"><a href="index.php">Home</a> > <b>Presidente Attuale Zhang Guanghong</b></span>
+        <div id="subLink"><a href="#AA">Linea Marziale</a>｜<a href="#BB">Esperienza Marziale</a></div>
+        <h2>Formazione Accademica</h2><a name="AA" id="AA"></a>
+        <p><img src="https://wutang.tw/images/Chairman-photo-02.jpg" class="photoR">
+        Istruzione: Laureato in Master in Business Administration (EMBA), Facoltà di Management dell'Università Nazionale Cheng Kung</p>
+        <h2>Linea Marziale</h2></a><a name="BB" id="BB"></a>
+        <p>Liu Yunqiao: Baji Quan, Pigua Zhang, Bagua Zhang.<br>
+            Wei Xiaotang: Pugno Mantide Religiosa Otto Passi<br>
+            Xu Ji: Pugno Lungo, Bagua Zhang, Baji Quan, Pigua Zhang.<br>
+            Xi Jiajun: Bagua Zhang.
+        </p>
+        <br><br><br>
+        <h2>Esperienza Marziale</h2><a name="DD" id="DD"></a>
+        <p>
+            <ul>
+                <li>Vice Presidente, Associazione di Promozione delle Arti Marziali Cinesi Wutan</li>
+                <li>Arbitro Nazionale Livello A, Associazione delle Arti Marziali Cinesi della Repubblica di Cina</li>
+                <li>Allenatore Nazionale di Sport di Arti Marziali, Federazione Sportiva della Repubblica di Cina</li>
+                <li>Membro del Comitato, Comitato degli Allenatori, Associazione delle Arti Marziali della Città di Taipei</li>
+                <li>Allenatore, Centro di Promozione delle Arti Marziali Wutan</li>
+                <li>Allenatore, Classe Preparatoria Allenatori del Comitato Baji Quan, Associazione delle Arti Marziali Cinesi della Repubblica di Cina</li>
+                <li>Istruttore del Club di Arti Marziali, Istituto di Tecnologia di Cina, Università Shih Hsin</li>
+                <li>Insegnante Professionale di Arti Marziali, Ufficio di Educazione Fisica, Università Shih Hsin</li>
+                <li>Insegnante di Arti Marciali, Campo di Studio Estivo di Ritorno in Patria per Giovani Oltremare, Corpo Giovanile</li>
+            </ul>
+        </p>
+        </div>
+        <div class="clear"></div>
+        </article>
+'}
