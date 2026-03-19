@@ -1,0 +1,84 @@
+:root{
+  --bg:#0f0f0f;
+  --panel:#151515;
+  --muted:#8c8c8c;
+  --text:#f2f2f2;
+  --accent:#9b0000;
+  --accent-2:#c80000;
+  --ring:rgba(155,0,0,.35);
+  --container:1100px;
+  --radius:14px;
+  --shadow:0 10px 30px rgba(0,0,0,.3);
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:"Noto Sans",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+img{max-width:100%;display:block}
+a{color:#fbd1d1;text-decoration:none}
+a:hover{text-decoration:underline}
+
+.container{width:100%;max-width:var(--container);margin:0 auto;padding:0 20px}
+.section{padding:60px 0}
+
+.skip-link{position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden}
+.skip-link:focus{left:16px;top:16px;width:auto;height:auto;background:#fff;color:#000;padding:8px 12px;border-radius:6px;z-index:9999}
+
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:12px 18px;background:linear-gradient(180deg,#1a1a1a,#121212);border-bottom:1px solid #222}
+.brand{display:flex;align-items:center;gap:10px}
+.brand-logo{width:36px;height:36px}
+.brand-name{font-weight:700;letter-spacing:.5px}
+.lang-switch{display:flex;gap:8px}
+.lang-btn{background:#1d1d1d;border:1px solid #2a2a2a;color:#eee;padding:6px 10px;border-radius:8px;cursor:pointer}
+.lang-btn:hover{border-color:var(--accent);box-shadow:0 0 0 3px var(--ring)}
+
+.hero{position:relative;min-height:420px;display:flex;align-items:center;background:linear-gradient(180deg,rgba(0,0,0,.2),rgba(0,0,0,.7)),var(--hero-bg);background-size:cover;background-position:center}
+.hero-inner{padding:80px 0;text-align:center}
+.hero h1{font-size:56px;margin:0 0 8px}
+.tagline{font-size:20px;color:#f1d7d7;margin:0 0 24px}
+.cta{display:inline-block;background:var(--accent);color:#fff;padding:12px 20px;border-radius:999px;border:1px solid #7a0000;box-shadow:var(--shadow)}
+.cta:hover{background:var(--accent-2);text-decoration:none}
+.cta.secondary{background:#232323;border-color:#333}
+
+.news-ribbon{position:relative;height:44px;background-size:cover;background-position:left center;display:flex;align-items:center;padding-left:48px}
+.news-ribbon::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.6),transparent)}
+.news-title{position:relative;font-weight:700;letter-spacing:.4px}
+
+.styles-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:20px}
+.style-card{background:var(--panel);border:1px solid #232323;border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
+.style-card h3{margin-top:0}
+
+.founder{display:grid;grid-template-columns:1.1fr 1fr;gap:24px;align-items:center}
+.founder-media img{border-radius:var(--radius);border:1px solid #262626;box-shadow:var(--shadow)}
+.founder-content{background:var(--panel);border:1px solid #232323;border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)}
+.founder-sub{color:var(--muted);margin-top:-6px}
+.more-link{display:inline-block;margin-top:8px}
+
+.team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.person-card{background:var(--panel);border:1px solid #232323;border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
+
+#federation .ext-link{display:inline-block;margin-top:10px}
+
+.social-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.social-card{background:var(--panel);border:1px solid #232323;border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
+.instagram-media{border:1px dashed #333;border-radius:12px;padding:14px;background:#111}
+.tiktok-embed{display:flex;align-items:center;justify-content:center;height:180px;background:#111;border:1px dashed #333;border-radius:12px}
+.tiktok-button{display:inline-block;background:#000;color:#fff;padding:10px 16px;border-radius:999px;border:1px solid #333}
+.fb-page{min-height:240px}
+.hint{color:var(--muted);font-size:13px;margin-top:8px}
+.disclaimer{color:var(--muted);font-size:13px;margin-top:12px}
+
+#contact .contact-actions{margin-top:10px}
+
+.site-footer{border-top:1px solid #222;background:#121212;margin-top:40px}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;padding:20px}
+.footer-links{display:flex;gap:14px}
+
+@media (max-width:1000px){
+  .founder{grid-template-columns:1fr}
+  .team-grid{grid-template-columns:repeat(2,1fr)}
+  .social-grid{grid-template-columns:1fr}
+}
+@media (max-width:640px){
+  .styles-grid{grid-template-columns:1fr}
+  .hero h1{font-size:40px}
+}
