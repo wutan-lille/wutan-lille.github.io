@@ -109,7 +109,8 @@
       adam: 'adam.json',
       lin: 'lin.json',
       person4: 'person4.json',
-      federation: 'federation.json'
+      federation: 'federation.json', 
+	  santiago: 'santiago.json', 
     };
 
     const promises = Object.entries(files).map(([key, file]) => {
