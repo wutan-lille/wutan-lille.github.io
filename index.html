@@ -258,9 +258,13 @@
             Lire la suite
           </button>
         </article>
-        <article class="person-card">
+        <article class="person-card compact">
           <h3>Santiago Bragagnolo</h3>
-          <p data-i18n="team.santiago">Professeur à Wutan Lille, élève de Lin Zhongxi depuis 2017, praticien d'arts martiaux depuis près de 30 ans.</p>
+          <div class="dynamic-content" id="santiago-content"></div>
+		  <p data-i18n="team.santiago">Professeur à Wutan Lille, élève de Lin Zhongxi depuis 2017, praticien d'arts martiaux depuis près de 30 ans.</p>
+		  <button class="expand-toggle" data-expand-target="#expand-modal" aria-haspopup="dialog" aria-controls="expand-modal">
+            Lire la suite
+          </button>
         </article>
       </div>
     </section>
@@ -367,6 +371,7 @@
         "lin-content": "lin",
         "person4-content": "person4",
         "federation-content": "federation"
+		"santiago-content": "santiago"
       };
 
       function loadContent(id, key){
