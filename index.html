@@ -26,6 +26,122 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;600;700&family=Noto+Serif+TC:wght@400;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* Solo lo imprescindible para el modal expandido al 50% */
+    .expand-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.6);
+      display: none;
+      z-index: 1000;
+      padding: clamp(8px, 2vmin, 24px);
+      box-sizing: border-box;
+    }
+    .expand-overlay.open { display: grid; }
+    .expand-content {
+      margin: auto;
+      width: min(50vw, 100%);
+      max-width: 1200px;
+      max-height: min(85vh, 100%);
+      background: #fff;
+      color: #222;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.25);
+      overflow: hidden;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+    }
+    .expand-content header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: .75rem;
+      padding: .75rem 1rem;
+      border-bottom: 1px solid #eee;
+      background: #fafafa;
+    }
+    .expand-content header h3 { margin: 0; font-size: 1.1rem; }
+    .expand-content .content {
+      padding: 1rem;
+      overflow: auto;
+    }
+    .expand-content footer {
+      padding: .5rem 1rem .75rem;
+      border-top: 1px solid #eee;
+      display: flex;
+      justify-content: flex-end;
+      gap: .5rem;
+      background: #fafafa;
+    }
+    .expand-content button {
+      appearance: none;
+      border: 1px solid #ccc;
+      background: #fff;
+      padding: .5rem .8rem;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .expand-content button:hover { background: #f3f3f3; }
+    .expand-content .loader {
+      padding: 1rem;
+      color: #666;
+    }
+
+    /* Ocultar contenido dinámico por defecto */
+    .person-card .dynamic-content,
+    .founder-content .dynamic-content {
+      display: none;
+      margin: 0.5rem 0;
+      padding: 0.5rem;
+      background: #f9f9f9;
+      border-radius: 8px;
+      border-left: 4px solid #9b0000;
+    }
+    .person-card .dynamic-content.loaded,
+    .founder-content .dynamic-content.loaded {
+      display: block;
+    }
+
+    /* Estados de las tarjetas */
+    .person-card.compact .dynamic-content,
+    .founder-content.compact .dynamic-content {
+      display: none !important;
+    }
+    .person-card.expanded .dynamic-content,
+    .founder-content.expanded .dynamic-content {
+      display: block !important;
+    }
+
+    /* Mejorar apariencia de las tarjetas compactas */
+    .person-card.compact,
+    .founder-content.compact {
+      padding: 1rem;
+      border: 1px solid #eee;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      background: #fafafa;
+    }
+    .person-card.compact h3,
+    .founder-content.compact h2 {
+      margin-top: 0;
+      color: #333;
+    }
+
+    /* Place para el botón en founder y cards */
+    .more-link { margin-right: .5rem; }
+    .expand-toggle {
+      appearance: none;
+      border: 1px solid #ccc;
+      background: #fff;
+      padding: .4rem .7rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: .9rem;
+      margin-top: 0.5rem;
+    }
+    .expand-toggle:hover { background: #f3f3f3; }
+  </style>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -79,63 +195,61 @@
     </section>
 
     <section class="founder container section" id="founder">
-  <div class="founder-media">
-    <img src="https://www.wutang.tw/images/FounderBG.jpg" alt="Liu Yun Qiao" loading="lazy" />
-  </div>
-  <div class="founder-content is-reduced">
-    <h2 data-i18n="founder.title">Fondateur : Liu Yun Qiao</h2>
-    <p class="founder-sub" data-i18n="founder.subtitle">Maître légendaire du Wutan</p>
-    
-    <!-- Contenido dinámico que se carga desde JSON -->
-    <div class="dynamic-content" id="founder-content"></div>
-    
-    <p data-i18n="founder.bio">
-      Liu Yun Qiao est une figure emblématique du Wutan. Sa transmission rigoureuse et sa compréhension profonde des formes externes et internes ont formé des générations d’élèves. Son héritage est au cœur du programme de Wutan Lille.
-    </p>
-    <a class="more-link" href="https://www.wutang.tw/personage.php?id=1" target="_blank" rel="noopener" data-i18n="founder.link">
-      En savoir plus
-    </a>
-    <button class="expand-toggle" data-expand-target="#expand-modal" aria-haspopup="dialog" aria-controls="expand-modal">
-      Lire la suite
-    </button>
-  </div>
-</section>
+      <div class="founder-media">
+        <img src="https://www.wutang.tw/images/FounderBG.jpg" alt="Liu Yun Qiao" loading="lazy" />
+      </div>
+      <div class="founder-content compact">
+        <h2 data-i18n="founder.title">Fondateur : Liu Yun Qiao</h2>
+        <p class="founder-sub" data-i18n="founder.subtitle">Maître légendaire du Wutan</p>
+        
+        <!-- Contenido dinámico que se carga desde JSON -->
+        <div class="dynamic-content" id="founder-content"></div>
+        
+        <p data-i18n="founder.bio">
+          Liu Yun Qiao est une figure emblématique du Wutan. Sa transmission rigoureuse et sa compréhension profonde des formes externes et internes ont formé des générations d’élèves. Son héritage est au cœur du programme de Wutan Lille.
+        </p>
+        <a class="more-link" href="https://www.wutang.tw/personage.php?id=1" target="_blank" rel="noopener" data-i18n="founder.link">
+          En savoir plus
+        </a>
+        <button class="expand-toggle" data-expand-target="#expand-modal" aria-haspopup="dialog" aria-controls="expand-modal">
+          Lire la suite
+        </button>
+      </div>
+    </section>
 
-<section class="container section" id="team">
-  <h2 data-i18n="team.title">Équipe</h2>
-  <div class="team-grid">
-    <article class="person-card is-reduced">
-      <h3>Adam Hsu</h3>
-      <div class="dynamic-content" id="adam-content"></div>
-      <p><a href="https://www.wutang.tw/personage.php?id=2" target="_blank" rel="noopener">https://www.wutang.tw/personage.php?id=2</a></p>
-      <button class="expand-toggle" data-expand-target="#expand-modal" aria-haspopup="dialog" aria-controls="expand-modal">
-        Lire la suite
-      </button>
-    </article>
-    <article class="person-card is-reduced">
-      <h3>Lin Johnson</h3>
-      <div class="dynamic-content" id="lin-content"></div>
-      <p><a href="https://www.wutang.tw/personage.php?id=3" target="_blank" rel="noopener">https://www.wutang.tw/personage.php?id=3</a></p>
-      <button class="expand-toggle" data-expand-target="#expand-modal" aria-haspopup="dialog" aria-controls="expand-modal">
-        Lire la suite
-      </button>
-    </article>
-    <article class="person-card is-reduced">
-      <h3>Zhang Guanghong</h3>
-      <div class="dynamic-content" id="person4-content"></div>
-      <p><a href="https://www.wutang.tw/personage.php?id=4" target="_blank" rel="noopener">https://www.wutang.tw/personage.php?id=4</a></p>
-      <button class="expand-toggle" data-expand-target="#expand-modal" aria-haspopup="dialog" aria-controls="expand-modal">
-        Lire la suite
-      </button>
-    </article>
-    <article class="person-card">
-      <h3>Santiago Bragagnolo</h3>
-      <p data-i18n="team.santiago">Professeur à Wutan Lille, élève de Lin Zhongxi depuis 2017, praticien d’arts martiaux depuis près de 30 ans.</p>
-    </article>
-  </div>
-</section>
-
-
+    <section class="container section" id="team">
+      <h2 data-i18n="team.title">Équipe</h2>
+      <div class="team-grid">
+        <article class="person-card compact">
+          <h3>Adam Hsu</h3>
+          <div class="dynamic-content" id="adam-content"></div>
+          <p><a href="https://www.wutang.tw/personage.php?id=2" target="_blank" rel="noopener">https://www.wutang.tw/personage.php?id=2</a></p>
+          <button class="expand-toggle" data-expand-target="#expand-modal" aria-haspopup="dialog" aria-controls="expand-modal">
+            Lire la suite
+          </button>
+        </article>
+        <article class="person-card compact">
+          <h3>Lin Johnson</h3>
+          <div class="dynamic-content" id="lin-content"></div>
+          <p><a href="https://www.wutang.tw/personage.php?id=3" target="_blank" rel="noopener">https://www.wutang.tw/personage.php?id=3</a></p>
+          <button class="expand-toggle" data-expand-target="#expand-modal" aria-haspopup="dialog" aria-controls="expand-modal">
+            Lire la suite
+          </button>
+        </article>
+        <article class="person-card compact">
+          <h3>Personaje id=4</h3>
+          <div class="dynamic-content" id="person4-content"></div>
+          <p><a href="https://www.wutang.tw/personage.php?id=4" target="_blank" rel="noopener">https://www.wutang.tw/personage.php?id=4</a></p>
+          <button class="expand-toggle" data-expand-target="#expand-modal" aria-haspopup="dialog" aria-controls="expand-modal">
+            Lire la suite
+          </button>
+        </article>
+        <article class="person-card">
+          <h3>Santiago Bragagnolo</h3>
+          <p data-i18n="team.santiago">Professeur à Wutan Lille, élève de Lin Zhongxi depuis 2017, praticien d'arts martiaux depuis près de 30 ans.</p>
+        </article>
+      </div>
+    </section>
 
     <section class="container section" id="federation">
       <h2 data-i18n="fed.title">Fédération Internationale</h2>
@@ -162,7 +276,6 @@
 
         <div class="social-card">
           <h3>TikTok</h3>
-          <p><a href="https://www.tiktok.com/@wutan140" target="_blank" rel="noopener">@wutan140</a></p>
           <div class="tiktok-embed">
             <a class="tiktok-button" href="https://www.tiktok.com/@wutan140" target="_blank" rel="noopener" data-i18n="social.tiktok">Voir sur TikTok</a>
           </div>
@@ -213,8 +326,173 @@
     </div>
   </footer>
 
+  <!-- Modal de lectura expandida al 50% -->
+  <div class="expand-overlay" id="expand-modal" role="dialog" aria-modal="true" aria-labelledby="expand-title" aria-hidden="true">
+    <div class="expand-content" role="document">
+      <header>
+        <h3 id="expand-title">Article</h3>
+        <button type="button" class="expand-close" aria-label="Fermer">✕</button>
+      </header>
+      <div class="content">
+        <div class="loader" aria-live="polite">Chargement du contenu…</div>
+      </div>
+      <footer>
+        <button type="button" class="expand-close">Fermer</button>
+      </footer>
+    </div>
+  </div>
+
   <!-- Facebook SDK -->
   <script async defer crossorigin="anonymous" src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v19.0"></script>
+  <script>
+    /* Carga dinámica de contenido desde JSON (sin tocar assets/js/main.js) */
+    (function(){
+      const map = {
+        "founder-content": "founder",
+        "adam-content": "adam",
+        "lin-content": "lin",
+        "person4-content": "person4",
+        "federation-content": "federation"
+      };
+
+      function loadContent(id, key){
+        const el = document.getElementById(id);
+        if(!el) return;
+        if(el.dataset.loaded) return;
+        el.dataset.loaded = "1";
+        el.textContent = "Chargement…";
+        fetch("assets/data/" + key + ".json", {cache: "no-cache"})
+          .then(r => r.ok ? r.json() : Promise.reject(r))
+          .then(data => { 
+            el.textContent = data.content || ""; 
+            el.classList.add('loaded');
+          })
+          .catch(() => { 
+            el.textContent = "Impossible de charger le contenu."; 
+            el.classList.add('loaded');
+          });
+      }
+
+      Object.entries(map).forEach(([id, key]) => loadContent(id, key));
+    })();
+  </script>
+  <script>
+    /* Expansión a 50% del ancho disponible */
+    (function(){
+      const overlay = document.getElementById("expand-modal");
+      const titleEl = document.getElementById("expand-title");
+      const contentEl = overlay.querySelector(".content");
+      const closeBtns = overlay.querySelectorAll(".expand-close");
+      let lastFocus = null;
+      let currentLoadId = null;
+
+      const cardMap = {
+        "founder-content": "founder",
+        "adam-content": "adam",
+        "lin-content": "lin",
+        "person4-content": "person4"
+      };
+
+      function getTitleFor(btn){
+        // Busca el h3/h2 más cercano
+        const card = btn.closest(".person-card, .founder-content");
+        const h = card ? card.querySelector("h2, h3") : null;
+        return h ? h.textContent.trim() : "Article";
+      }
+
+      function getContentIdFor(btn){
+        const card = btn.closest(".person-card, .founder-content");
+        if(!card) return null;
+        const dyn = card.querySelector(".dynamic-content");
+        return dyn ? dyn.id : null;
+      }
+
+      function getKeyForContentId(id){
+        return cardMap[id] || null;
+      }
+
+      function loadInto(id, key){
+        // Usa la misma función global de carga si existe
+        if(typeof loadContent === "function"){
+          loadContent(id, key);
+          return;
+        }
+        // Fallback si no se definió en el bloque anterior
+        const el = document.getElementById(id);
+        if(!el) return;
+        if(el.dataset.loaded) return;
+        el.dataset.loaded = "1";
+        el.textContent = "Chargement…";
+        fetch("assets/data/" + key + ".json", {cache: "no-cache"})
+          .then(r => r.ok ? r.json() : Promise.reject(r))
+          .then(data => { 
+            el.textContent = data.content || ""; 
+            el.classList.add('loaded');
+          })
+          .catch(() => { 
+            el.textContent = "Impossible de charger le contenu."; 
+            el.classList.add('loaded');
+          });
+      }
+
+      function openModal(title, sourceId, sourceKey){
+        lastFocus = document.activeElement;
+        overlay.classList.add("open");
+        overlay.setAttribute("aria-hidden", "false");
+        document.documentElement.style.overflow = "hidden";
+
+        // Título
+        titleEl.textContent = title || "Article";
+
+        // Contenido (copia la fuente al modal)
+        const source = document.getElementById(sourceId);
+        if(source){
+          contentEl.innerHTML = "";
+          contentEl.appendChild(source.cloneNode(true));
+          // Asegurar que el contenido cargado aparezca en el modal
+          const k = sourceKey || getKeyForContentId(sourceId);
+          if(k) loadInto(sourceId, k);
+        } else {
+          contentEl.innerHTML = "<p>Contenu non disponible.</p>";
+        }
+
+        // Focus inicial
+        const firstBtn = overlay.querySelector(".expand-close");
+        if(firstBtn) firstBtn.focus();
+      }
+
+      function closeModal(){
+        overlay.classList.remove("open");
+        overlay.setAttribute("aria-hidden", "true");
+        document.documentElement.style.overflow = "";
+        // Limpia el contenido del modal (opcional)
+        contentEl.innerHTML = "<div class=\"loader\" aria-live=\"polite\">Chargement du contenu…</div>";
+        if(lastFocus && typeof lastFocus.focus === "function") {
+          lastFocus.focus();
+        }
+      }
+
+      document.addEventListener("click", (e) => {
+        const btn = e.target.closest("[data-expand-target]");
+        if(btn){
+          e.preventDefault();
+          const title = getTitleFor(btn);
+          const sourceId = getContentIdFor(btn);
+          const key = getKeyForContentId(sourceId);
+          if(sourceId) openModal(title, sourceId, key);
+        }
+        if(e.target === overlay || e.target.classList.contains("expand-close")){
+          closeModal();
+        }
+      });
+
+      document.addEventListener("keydown", (e) => {
+        if(e.key === "Escape" && overlay.classList.contains("open")){
+          closeModal();
+        }
+      });
+    })();
+  </script>
   <script src="assets/js/main.js"></script>
 </body>
 </html>
